@@ -1,0 +1,32 @@
+{{> includes/header}}
+
+<h1>items</h1>
+
+<p><a href="/">Go home</a></p>
+<p><a href="/items/new">Create a new item</a></p>
+
+<hr>
+
+<table>
+    <tr>
+        <th>Account ID</th>
+        <th>Amount</th>
+        <th>Created</th>
+        <th>Customer</th>
+        <th>Accounts</th>
+    </tr>
+    {{#items}}
+        <tr>
+            <td>{{accountID}}</td>
+            <td>{{amount}} JPY</td>
+            <td>{{created}}</td>
+            <td>
+                {{#accounts}}
+                    {{name}}<br>
+                {{/accounts}}
+            </td>
+        </tr>
+    {{/items}}
+</table>
+
+{{> includes/footer}}
