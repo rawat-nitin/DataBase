@@ -1,0 +1,39 @@
+{{> includes/header}}
+
+<h1>Accounts</h1>
+
+<p><a href="/">Go home</a></p>
+
+<form action="/accounts/new" method="post">
+    <div class="jumbotron">
+        <label>Acount Number: <br><input type="number" name="accountNumber"/> </label>
+    </div>
+    <div>
+        <label>Branch: <br><input type="text" name="branch"/> </label>
+    </div>
+    <div style="margin-top: 8px;">
+        <input type="submit" value="Add"/>
+    </div>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+</form>
+
+<hr>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Accounts</th>
+        <th>Branch</th>
+        <th>Items</th>
+    </tr>
+    {{#accounts}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{acountNumber}}</td>
+            <td>{{branch}}</td>
+            <td><a href="/Accounts/{{id}}/orders">Showing Accounts</a></td>
+        </tr>
+    {{/accounts}}
+</table>
+
+{{> includes/footer}}
