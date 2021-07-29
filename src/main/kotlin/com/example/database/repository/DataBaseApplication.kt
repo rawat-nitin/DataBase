@@ -1,4 +1,4 @@
-package com.example.database
+package com.example.database.repository
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
