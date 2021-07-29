@@ -1,5 +1,6 @@
 package com.example.database.controller
 
+import com.example.database.entity.Account
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.jpa.domain.AbstractPersistable_.id
 import org.springframework.stereotype.Controller
@@ -27,9 +28,9 @@ class AccountController(
         @PostMapping("/new")
         fun newAccount(model: Model, @RequestParam name: String, @RequestParam price: String): String {
             Account().apply {
-              this.name = name
-              this.price = price.toLongOrNull() ?: 0
-               accuntRepository.save(this)
+              this.branch = branch
+              this.accountNumber = accountNumber.toLongOrNull() ?: 0
+               accountRepository.save(this)
         }
-        return showAllProducts(model)
+        return showAllAccounts(model)
 }
