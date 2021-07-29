@@ -17,5 +17,5 @@ class Account(
     val branch:  String,
 
     @Column(name = "accountNumber", nullable = false, unique = true)
-    val accountNumber: Int = 0){
+    var accountNumber: Int = 0){
 }
